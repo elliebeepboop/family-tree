@@ -1,16 +1,26 @@
 class FamilyTree {
   constructor (value) {
     if (!value || typeof value !== 'string'){
-      throw
+      throw 'hi';
     }
-    this.children = []
-    this.name = value
+    this.value = value;
+    this.children = [];
   }
-  insert(child){
-    let childFamilyTree = new FamilyTree(child)
-    this.children.push(childFamilyTree)
+
+  insert(child) {
+    let childFamilyTree = new FamilyTree(child);
+    this.children.push(childFamilyTree);
   }
-  familySize(){}
+
+  familySize() {
+    return this.children.length;
+  }
 }
 
-module.exports = FamilyTree;
+const anthonyTree = new FamilyTree('anthony');
+anthonyTree.insert('tonyjr');
+anthonyTree.insert('tommy');
+anthonyTree.insert('remy');
+
+
+console.log(anthonyTree.familySize());

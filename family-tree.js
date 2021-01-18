@@ -6,9 +6,14 @@ class FamilyTree {
     this.children = []
     this.value = value
   }
-  insert(child){
-    let childFamilyTree = new FamilyTree(child)
-    this.children.push(childFamilyTree)
+
+  insert(child) {
+    let childFamilyTree = new FamilyTree(child);
+    this.children.push(childFamilyTree);
+  }
+
+  familySize() {
+    return this.children.length;
   }
   familySize(){
     return this.children.length + 1
